@@ -1,0 +1,7 @@
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    zone VARCHAR(50),
+    cost DECIMAL(10,2),
+    status VARCHAR(20)
+);
