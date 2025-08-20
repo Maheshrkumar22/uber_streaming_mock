@@ -3,6 +3,7 @@ import json
 import time
 import random
 from datetime import datetime
+from configparser import ConfigParser
 
 producer = KafkaProducer(
     bootstrap_servers=['localhost:9092'],

@@ -1,4 +1,5 @@
 import streamlit as st
+from configparser import ConfigParser
 import pandas as pd
 import mysql.connector
 import folium
@@ -6,10 +7,12 @@ from streamlit_folium import folium_static
 from datetime import timedelta
 import time
 
+config = ConfigParser()
+
 conn = mysql.connector.connect(
     host='localhost',
-    user='root',
-    password='mahi_2203',
+    user=config['db']['user_name'],
+    password=config['db']['password'],
     database='uber_db'
 )
 
