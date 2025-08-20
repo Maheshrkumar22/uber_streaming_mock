@@ -1,5 +1,10 @@
 # Uber streaming Data for backend
 
+## create python virtual environment
+```bash
+python3 venv my_env
+```
+
 ## Activate the virtual environment using 
 ```bash
 source my_env/bin/activate
