@@ -6,6 +6,7 @@ from collections import Counter
 from datetime import datetime, timedelta
 
 config = ConfigParser()
+config.read('config.ini')
 
 consumer = KafkaConsumer(
     'uber_events',
@@ -28,6 +29,7 @@ insights = Counter()
 print("Starting consumer...")
 for msg in consumer:
     event = msg.value
+    print('received :{}',event['cost'])
     # Insert into MySQL
     cur.execute(
         "INSERT INTO bookings (timestamp, zone, cost, status) VALUES (%s, %s, %s, %s)",
@@ -41,4 +43,4 @@ for msg in consumer:
         insights[event['zone']] += 1
     
     major_zone = insights.most_common(1)[0][0] if insights else 'None'
-    print(f"Major zone: {major_zone}")
+    #print(f"Major zone: {major_zone}")

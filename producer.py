@@ -14,7 +14,7 @@ zones = ['Downtown', 'Suburb', 'Airport', 'Uptown']
 
 print("Starting producer...")
 i=0
-while i<=10:
+while True:
     event = {
         'timestamp': datetime.now().isoformat(),
         'zone': random.choice(zones),

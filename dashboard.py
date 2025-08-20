@@ -8,6 +8,7 @@ from datetime import timedelta
 import time
 
 config = ConfigParser()
+config.read('config.ini')
 
 conn = mysql.connector.connect(
     host='localhost',
@@ -27,8 +28,8 @@ def get_data():
 st.title('Uber Mock Dashboard')
 
 zone_coords = {
-    'Downtown': [37.7749, -122.4194],
-    'Suburb': [37.8044, -122.2712],
+    'Downtown': [10.974814,79.396773],
+    'Suburb': [10.963922, 79.392213],
     'Airport': [37.6213, -122.3790],
     'Uptown': [37.8044, -122.4110]
 }
@@ -39,7 +40,7 @@ while True:
         st.subheader('Bookings per Zone (Last 5 Min)')
         st.bar_chart(df.set_index('zone')['count'])
         
-        m = folium.Map(location=[37.7749, -122.4194], zoom_start=12)
+        m = folium.Map(location=[10.974814,79.396773], zoom_start=12)
         for _, row in df.iterrows():
             zone = row['zone']
             if zone in zone_coords:
