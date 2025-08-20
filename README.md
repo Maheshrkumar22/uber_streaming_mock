@@ -43,4 +43,8 @@ streamlit run dashboard.py
 ```bash
 docker-compose down
 ```
+## sample images
+<img width="1186" height="722" alt="image" src="https://github.com/user-attachments/assets/b8fbeab7-80d1-4390-aa18-c28bba475919" />
+
+<img width="985" height="514" alt="image" src="https://github.com/user-attachments/assets/fbcab980-1279-44c6-b30d-36e5a266b123" />
 
